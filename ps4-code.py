@@ -50,7 +50,7 @@ file_list=[
 
 # List of applications to test
 apps = [
-    "C:/Program Files (x86)/Calibre2/ebook-viewer.exe"
+    "C:/Program Files/Calibre2/ebook-viewer.exe"
     ]
 
 ############### end configuration #################
