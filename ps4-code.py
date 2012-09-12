@@ -69,8 +69,8 @@ FuzzFactor  = 333
 num_tests   = lngth - 1 # 10000
 sleep_delay = 6.
 crashes = 0
-
-
+os.system("rm -rf OUTFILES 2> /dev/null")
+os.system("mkdir  OUTFILES 2> /dev/null")
 t1 = time.time()
 for i in range(num_tests):
     #WAS: file_choice = random.choice(file_list)
@@ -87,6 +87,7 @@ for i in range(num_tests):
         buf[rn] = "%c"%(rbyte)
     # end Charlie Miller code
 
+    fuzz_output = os.path.join("OUTFILES/", "_%d_fuzz.pdf" % i)
     open(fuzz_output, 'wb').write(buf)
 
     #WAS: process = subprocess.Popen([app, fuzz_output])
@@ -101,14 +102,6 @@ for i in range(num_tests):
         "it crashed, so save the fuzzed file"
         print i, "NOT", file_choice, "****************************************"
         crashes += 1
-        os.system("mkdir CRASHES")
-        destino = os.path.join("CRASHES/results", "_%d_" % i + ".pdf")
-        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        print "*" + file_choice
-        print destino
-        print "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        os.rename(fuzz_output, destino)
-        #fuzzed_filename = "".join([str(i),"_",file_choice])
         #open(fuzzed_filename, 'wb').write(buf)
         
 t2 = time.time()
