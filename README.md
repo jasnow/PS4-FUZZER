@@ -12,7 +12,7 @@ Original Code: https://gist.github.com/14984f8ab057795a6401
 Applications
 ----------------------------------
 
- * "TBD"
+ * C:/Program Files/Calibre2/ebook-viewer.exe
 
 Data Files came from these sources
 ----------------------------------
